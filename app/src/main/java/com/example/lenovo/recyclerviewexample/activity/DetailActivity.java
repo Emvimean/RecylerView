@@ -1,7 +1,9 @@
-package com.example.lenovo.recyclerviewexample;
+package com.example.lenovo.recyclerviewexample.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.lenovo.recyclerviewexample.R;
 
 public class DetailActivity extends AppCompatActivity {
 

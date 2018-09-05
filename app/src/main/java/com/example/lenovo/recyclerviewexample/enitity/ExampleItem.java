@@ -1,4 +1,4 @@
-package com.example.lenovo.recyclerviewexample;
+package com.example.lenovo.recyclerviewexample.enitity;
 
 /**
  * Created by lenovo on 2/20/2018.
@@ -7,6 +7,7 @@ package com.example.lenovo.recyclerviewexample;
 public class ExampleItem {
     private String mImageUrl;
     private String mCreator;
+
 
     public ExampleItem(String imageUrl, String creator) {
         mImageUrl = imageUrl;
