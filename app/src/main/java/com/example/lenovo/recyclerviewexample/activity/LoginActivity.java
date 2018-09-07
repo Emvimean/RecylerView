@@ -93,9 +93,11 @@ public class LoginActivity extends AppCompatActivity {
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface arg0, int arg1) {
+                                Intent intent = new Intent(LoginActivity.this, gender_menu.class);
+                                startActivity(intent);
                                 Toast.makeText(LoginActivity.this,
                                         " Screen close successfully !",Toast.LENGTH_LONG).show();
-                                finish();
+//                                finish();
                             }
                         });
 

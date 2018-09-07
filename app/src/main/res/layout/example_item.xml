@@ -16,7 +16,6 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="152dp"
@@ -26,6 +25,7 @@
         <TextView
             android:id="@+id/text_view_creator"
             android:layout_width="166dp"
+            android:textAlignment="center"
             android:layout_height="wrap_content"
             android:text="Creator Name"
             android:textColor="@color/colorPrimary"
