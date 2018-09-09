@@ -21,7 +21,7 @@ import com.example.lenovo.recyclerviewexample.R;
 
 import javax.xml.transform.Result;
 
-public class gender_menu extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     private String my_channel_01;
 
@@ -37,7 +37,7 @@ public class gender_menu extends AppCompatActivity {
         btnNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Context context = gender_menu.this;
+                Context context = MenuActivity.this;
                 Intent intent = new Intent(context, Result.class);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
                 builder
@@ -58,7 +58,7 @@ public class gender_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://facebook.com"));
-                PendingIntent pendingIntent = PendingIntent.getActivity(gender_menu.this,1, intent,
+                PendingIntent pendingIntent = PendingIntent.getActivity(MenuActivity.this,1, intent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
                 Uri defaultsoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(),my_channel_01);
