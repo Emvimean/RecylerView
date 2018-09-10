@@ -20,12 +20,10 @@ import java.util.ArrayList;
 /**
  * Created by Sengmean on 2/20/2018.
  */
-
 public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
 
     private Context mContext;
     private ArrayList<ExampleItem> mExampleList;
-
 
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -41,13 +39,20 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         final String creator = currentItem.getmCreator();
 
         holder.mTextView.setText(creator);
-        Picasso.with(mContext).load(imageUrl).fit().centerInside().into(holder.mImageView);
-        holder.click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(mContext, mExampleList.get(i).getmCreator(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        Picasso
+                .with(mContext)
+                .load(imageUrl)
+                .fit()
+                .placeholder(R.drawable.abc)
+                .error(R.mipmap.ic_launcher)
+                .centerInside()
+                .into(holder.mImageView);
+//        holder.click.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(mContext, mExampleList.get(i).getmCreator(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
@@ -55,25 +60,36 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         return mExampleList.size();
     }
 
-
+    /**
+     *
+     * @param context
+     * @param exampleList
+     */
     public ExampleAdapter(Context context, ArrayList<ExampleItem> exampleList) {
-        mContext = context;
-        mExampleList = exampleList;
+        this.mContext = context;
+        this.mExampleList = exampleList;
     }
 
-
+    /**
+     *
+     */
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView mImageView;
         public TextView mTextView;
-        public LinearLayout click;
+        public int i;
 
         public ExampleViewHolder(View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.image_view);
             mTextView = itemView.findViewById(R.id.text_view_creator);
-            click = itemView.findViewById(R.id.click);
+//            click = itemView.findViewById(R.id.click);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   Toast.makeText(mContext, mExampleList.get(i).getmCreator(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
-
     }
 }
